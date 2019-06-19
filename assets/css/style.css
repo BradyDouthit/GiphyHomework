@@ -2,7 +2,13 @@
     margin-left: 45%;
     margin-right: 45%;
 }
-.test {
+.button {
     margin-left: 45%;
     margin-right: 45%;
+}
+.animals {
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 30px;
 }
