@@ -28,6 +28,7 @@ $("button").on("click", function() {
             var newDiv = $("<div>")
             var newImage = $("<img>");
             newImage.attr("src", results[i].images.original_still.url);
+            newImage.addClass("images")
 
             var p = $("<p>");
             p.html("Rating: " + results[i].rating);
@@ -35,6 +36,22 @@ $("button").on("click", function() {
             newDiv.append(p);
             newDiv.append(newImage);
             $("#image-holder").prepend(newDiv);
+
+            $(".images").on("click", function() {
+                for (var i = 0; i < results.length; i++) {
+                    console.log(results[i].images.original.url)
+                    $(".images").attr("src", results[i].images.original.url);
+                }
+            });
         }
-    })
+        
+    });
 });
+
+
+/*  $(newImage).on("click", function() {
+        for (var i = 0; i < results.length; i++) {
+        console.log(results.images);
+        newImage.attr("src", results.images.original.url);
+        }
+    }); */
