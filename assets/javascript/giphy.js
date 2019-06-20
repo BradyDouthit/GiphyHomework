@@ -4,19 +4,21 @@ function animalFunction() {
     for (var i = 0; i < topics.length; i++) {
         console.log(topics[i]);
         var newButton = $("<button>").html(topics[i]);
-        newButton.addClass("animals");
+        newButton.addClass("animal-buttons");
+        newButton.attr("data-animal", topics[i]);
         $("#button-holder").prepend(newButton);
     }
 };
 animalFunction();
-$(".animals").on("click", function() {
+$("button").on("click", function() {
     var animal = $(this).attr("data-animal");
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=xRK1KaHGDNPmpkTkb0GWbJVWI9TUgiEu&q=" +
-    animal + "&limit=25&offset=0&rating=G&lang=en";
+    animal + "&limit=10&offset=0&rating=G&lang=en";
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        console.log(response.data[0].images.downsized)
+        console.log(response);
+        console.log(queryURL)
     })
 });
