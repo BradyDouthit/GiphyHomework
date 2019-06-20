@@ -39,8 +39,7 @@ $("button").on("click", function() {
 
             $(".images").on("click", function() {
                 for (var i = 0; i < results.length; i++) {
-                    console.log(results[i].images.original.url)
-                    $(".images").attr("src", results[i].images.original.url);
+                    $(this).attr("src", results[2].images.original.url);
                 }
             });
         }
