@@ -7,6 +7,7 @@ function animalFunction() {
         newButton.addClass("animal-buttons");
         newButton.attr("data-animal", topics[i]);
         $("#button-holder").prepend(newButton);
+
     }
 };
 animalFunction();
@@ -18,7 +19,22 @@ $("button").on("click", function() {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        console.log(response);
-        console.log(queryURL)
+
+        console.log(queryURL);
+
+        var results = response.data;
+        console.log(results);
+        for (var i = 0; i < results.length; i++) {
+            var newDiv = $("<div>")
+            var newImage = $("<img>");
+            newImage.attr("src", results[i].images.original_still.url);
+
+            var p = $("<p>");
+            p.html("Rating: " + results[i].rating);
+
+            newDiv.append(p);
+            newDiv.append(newImage);
+            $("#image-holder").prepend(newDiv);
+        }
     })
 });
