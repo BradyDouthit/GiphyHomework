@@ -20,16 +20,16 @@ $("button").on("click", function() {
         method: "GET"
     }).then(function(response) {
         var imageCount = 0;
-        var clickCheck = false;        
+        var clickCheck = 0;        
         var results = response.data;
         console.log(results);
         for (var i = 0; i < results.length; i++) {
             imageCount++
             console.log(imageCount);
-            var newDiv = $("<div>")
+            var newDiv = $("<div>");
             var newImage = $("<img>");
             newImage.attr("src", results[i].images.original_still.url);
-            newImage.addClass("image" + imageCount)
+            newImage.addClass("image" + imageCount);
 
             var p = $("<p>");
             p.html("Rating: " + results[i].rating);
@@ -41,12 +41,105 @@ $("button").on("click", function() {
         };
         $(".image10").on("click", function() {
             $(this).attr("src", results[9].images.original.url);
-            clickCheck = true;
-            if (clickCheck === true) {
-                clickCheck = false;
+            if (clickCheck === 0) {
+                clickCheck++
             }
-            console.log(clickCheck);
+            else {
+                clickCheck--
+                $(this).attr("src", results[9].images.original_still.url);
+            }
         });
+        $(".image9").on("click", function() {
+            $(this).attr("src", results[8].images.original.url);
+            if (clickCheck === 0) {
+                clickCheck++
+            }
+            else {
+                clickCheck--
+                $(this).attr("src", results[8].images.original_still.url);
+            }
+        });
+        $(".image8").on("click", function() {
+            $(this).attr("src", results[7].images.original.url);
+            if (clickCheck === 0) {
+                clickCheck++
+            }
+            else {
+                clickCheck--
+                $(this).attr("src", results[7].images.original_still.url);
+            }
+        });
+        $(".image7").on("click", function() {
+            $(this).attr("src", results[6].images.original.url);
+            if (clickCheck === 0) {
+                clickCheck++
+            }
+            else {
+                clickCheck--
+                $(this).attr("src", results[6].images.original_still.url);
+            }
+        });
+        $(".image6").on("click", function() {
+            $(this).attr("src", results[5].images.original.url);
+            if (clickCheck === 0) {
+                clickCheck++
+            }
+            else {
+                clickCheck--
+                $(this).attr("src", results[5].images.original_still.url);
+            }
+        });
+        $(".image5").on("click", function() {
+            $(this).attr("src", results[4].images.original.url);
+            if (clickCheck === 0) {
+                clickCheck++
+            }
+            else {
+                clickCheck--
+                $(this).attr("src", results[4].images.original_still.url);
+            }
+        });
+        $(".image4").on("click", function() {
+            $(this).attr("src", results[3].images.original.url);
+            if (clickCheck === 0) {
+                clickCheck++
+            }
+            else {
+                clickCheck--
+                $(this).attr("src", results[3].images.original_still.url);
+            }
+        });
+        $(".image3").on("click", function() {
+            $(this).attr("src", results[2].images.original.url);
+            if (clickCheck === 0) {
+                clickCheck++
+            }
+            else {
+                clickCheck--
+                $(this).attr("src", results[2].images.original_still.url);
+            }
+        });
+        $(".image2").on("click", function() {
+            $(this).attr("src", results[1].images.original.url);
+            if (clickCheck === 0) {
+                clickCheck++
+            }
+            else {
+                clickCheck--
+                $(this).attr("src", results[1].images.original_still.url);
+            }
+        });
+        $(".image1").on("click", function() {
+            $(this).attr("src", results[0].images.original.url);
+            if (clickCheck === 0) {
+                clickCheck++
+            }
+            else {
+                clickCheck--
+                $(this).attr("src", results[0].images.original_still.url);
+            }
+        });
+        
     });
 });
 
