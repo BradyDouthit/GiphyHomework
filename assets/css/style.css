@@ -21,7 +21,11 @@ img {
 }
 #search-div {
     margin-left: 50%;
+    position: fixed;
 }
 #submit {
     margin-top: 1%;
+}
+#search {
+    margin-right: 1%;
 }
