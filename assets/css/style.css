@@ -19,3 +19,9 @@
 img {
     width: 400px;
 }
+#search-div {
+    margin-left: 50%;
+}
+#submit {
+    margin-top: 1%;
+}

@@ -140,13 +140,21 @@ $("button").on("click", function() {
             }
         });
         
+        
     });
 });
 
-
-/*  $(newImage).on("click", function() {
-        for (var i = 0; i < results.length; i++) {
-        console.log(results.images);
-        newImage.attr("src", results.images.original.url);
-        }
-    }); */
+$("#submit").on("click", function() {
+    var userInput = $("#search").val();
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=xRK1KaHGDNPmpkTkb0GWbJVWI9TUgiEu&q=" +
+    userInput + "&limit=10&offset=0&rating=G&lang=en";
+    topics.push(userInput);
+    console.log(topics);
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+        var results = response.data;
+        console.log(results);
+    })
+});
