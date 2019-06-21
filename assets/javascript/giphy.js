@@ -19,16 +19,17 @@ $("button").on("click", function() {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-
-        console.log(queryURL);
-
+        var imageCount = 0;
+        var clickCheck = false;        
         var results = response.data;
         console.log(results);
         for (var i = 0; i < results.length; i++) {
+            imageCount++
+            console.log(imageCount);
             var newDiv = $("<div>")
             var newImage = $("<img>");
             newImage.attr("src", results[i].images.original_still.url);
-            newImage.addClass("images")
+            newImage.addClass("image" + imageCount)
 
             var p = $("<p>");
             p.html("Rating: " + results[i].rating);
@@ -37,13 +38,15 @@ $("button").on("click", function() {
             newDiv.append(newImage);
             $("#image-holder").prepend(newDiv);
 
-            $(".images").on("click", function() {
-                for (var i = 0; i < results.length; i++) {
-                    $(this).attr("src", results[2].images.original.url);
-                }
-            });
-        }
-        
+        };
+        $(".image10").on("click", function() {
+            $(this).attr("src", results[9].images.original.url);
+            clickCheck = true;
+            if (clickCheck === true) {
+                clickCheck = false;
+            }
+            console.log(clickCheck);
+        });
     });
 });
 
