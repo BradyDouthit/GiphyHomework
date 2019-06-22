@@ -20,7 +20,7 @@ img {
     width: 400px;
 }
 #search-div {
-    margin-left: 50%;
+    margin-left: 80%;
     position: fixed;
 }
 #submit {
@@ -28,4 +28,7 @@ img {
 }
 #search {
     margin-right: 1%;
+}
+#button-holder {
+    width: 800px;
 }
