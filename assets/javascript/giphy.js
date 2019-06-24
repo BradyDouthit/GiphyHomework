@@ -1,20 +1,20 @@
-var topics = ["Goats", "Cats", "Dogs", "Gorillas"];
+var topics = ["Jupiter", "Mercury", "Earth", "Mars"];
 
-function animalFunction() {
+function spaceFunction() {
     for (var i = 0; i < topics.length; i++) {
         console.log(topics[i]);
         var newButton = $("<button>").html(topics[i]);
-        newButton.addClass("animal-buttons");
-        newButton.attr("data-animal", topics[i]);
+        newButton.addClass("space-buttons");
+        newButton.attr("data-space", topics[i]);
         $("#button-holder").prepend(newButton);
 
     }
 };
-animalFunction();
-$(".animal-buttons").on("click", function () {
-    var animal = $(this).attr("data-animal");
+spaceFunction();
+$(".space-buttons").on("click", function () {
+    var space = $(this).attr("data-space");
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=xRK1KaHGDNPmpkTkb0GWbJVWI9TUgiEu&q=" +
-        animal + "&limit=10&offset=0&rating=G&lang=en";
+        space + "&limit=10&offset=0&rating=G&lang=en";
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -145,7 +145,7 @@ $(".animal-buttons").on("click", function () {
     });
 });
 
-$("#search").on("click", function () {
+$("#search-button").on("click", function () {
     var userInput = $("#input").val();
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=xRK1KaHGDNPmpkTkb0GWbJVWI9TUgiEu&q=" +
         userInput + "&limit=10&offset=0&rating=G&lang=en";
@@ -163,10 +163,10 @@ $("#search").on("click", function () {
         console.log(endOfArray)
         $("#search").val("");
         var newButton = $("<button>").html(endOfArray);
-        newButton.addClass("animal-buttons");
-        newButton.attr("data-animal", endOfArray);
+        newButton.addClass("space-buttons");
+        newButton.attr("data-space", endOfArray);
         $("#button-holder").append(newButton);
-        $(".animal-buttons").on("click", function () {
+        $(".space-buttons").on("click", function () {
             var imageCount = 0;
             var clickCheck = 0;
             for (var i = 0; i < results.length; i++) {

@@ -1,43 +1,51 @@
 html {
-    background-color: black;
+    background-image: url("../images/giphy-hw-background.jpg");
 }
-.animal-buttons {
+.space-buttons {
     border: none;
-    background-color: gray;
-    color: white;
+    background-color: #11afff;
+    color: black;
     font-size: 30px;
     cursor: pointer;
-    border: 1px solid red;
-    border-left: 2px solid black;
-
+    border: 1px solid #11afff;
+    margin-left: .5%;
+    margin-top: 10px;
 }
 p {
-    color: white;
+    color: black;
 }
 .new-div {
-    border: 1px solid red;
+    border: 1px solid #11afff;
     width: 400px;
-    background-color: gray;
+    background-color: #11afff;
     margin-top: 30px;
 }
 img {
     width: 400px;
 }
 #search-div {
-    margin-left: 81%;
+    margin-left: 80%;
+    margin-top: 10px;
     position: fixed;
-    background-color: gray;
+    background-color: #11afff;
     width: 300px;
-    height: 100%;
+    height: 100px;
 }
-#search {
+#search-button {
     border: none;
     cursor: pointer;
     margin-top: 5px;
+    color: #11afff;
+    background-color: black;
 }
 .search {
     margin-left: 23%;
 }
 #button-holder {
+    display: flex;
+    flex-wrap: wrap;
     width: 800px;
+}
+#search-text {
+    margin-top: 20px;
 }
