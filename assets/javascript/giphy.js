@@ -11,6 +11,7 @@ function spaceFunction() {
     }
 };
 spaceFunction();
+
 $(".space-buttons").on("click", function () {
     var space = $(this).attr("data-space");
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=xRK1KaHGDNPmpkTkb0GWbJVWI9TUgiEu&q=" +
@@ -151,17 +152,18 @@ $("#search-button").on("click", function () {
         userInput + "&limit=10&offset=0&rating=G&lang=en";
     topics.push(userInput);
     userButton =
-        console.log(topics);
+    console.log(topics);
+    $(".search").val("");
+
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        //var imageCount = 0;
+        imageCount = 0;
         var results = response.data;
         var endOfArray = topics[topics.length - 1];
         console.log(results);
         console.log(endOfArray)
-        $("#search").val("");
         var newButton = $("<button>").html(endOfArray);
         newButton.addClass("space-buttons");
         newButton.attr("data-space", endOfArray);

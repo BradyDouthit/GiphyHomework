@@ -1,5 +1,6 @@
 html {
     background-image: url("../images/giphy-hw-background.jpg");
+font-family: 'Nanum Gothic', sans-serif;
 }
 .space-buttons {
     border: none;
@@ -10,6 +11,7 @@ html {
     border: 1px solid #11afff;
     margin-left: .5%;
     margin-top: 10px;
+font-family: 'Nanum Gothic', sans-serif;
 }
 p {
     color: black;
@@ -37,6 +39,7 @@ img {
     margin-top: 5px;
     color: #11afff;
     background-color: black;
+font-family: 'Nanum Gothic', sans-serif;
 }
 .search {
     margin-left: 23%;
