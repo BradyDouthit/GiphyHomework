@@ -11,7 +11,7 @@ function spaceFunction() {
     }
 };
 spaceFunction();
-
+//welcome to sloppy code town
 $(".space-buttons").on("click", function () {
     var space = $(this).attr("data-space");
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=xRK1KaHGDNPmpkTkb0GWbJVWI9TUgiEu&q=" +
@@ -146,7 +146,8 @@ $(".space-buttons").on("click", function () {
     });
 });
 
-$("#search-button").on("click", function () {
+$("#search-button").on("click", function (event) {
+    event.preventDefault()
     var userInput = $("#input").val();
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=xRK1KaHGDNPmpkTkb0GWbJVWI9TUgiEu&q=" +
         userInput + "&limit=10&offset=0&rating=G&lang=en";
